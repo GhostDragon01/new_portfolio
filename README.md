@@ -3,10 +3,10 @@ Welcome to my portfolio! This project showcases my skills, projects, and experie
 
 ### Weblink: [Live Website](https://ghostdragon01.github.io/portfolio/)
 ## Some Images:
-<img width="450px;" src="images/about_page.png"/>
-<img width="450px;" src="images/skills_page.png"/>
-<img width="450px;" src="images/project_page.png"/>
-<img width="450px;" src="images/education_and_footer_page.png"/>
+<img width="450px;" src="./src/images/about_page.png"/>
+<img width="450px;" src="./src/images/skills_page.png"/>
+<img width="450px;" src="./src/images/project_page.png"/>
+<img width="450px;" src="./src/images/education_and_footer_page.png"/>
 
 
 ## Table of Contents
