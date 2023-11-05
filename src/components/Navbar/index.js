@@ -3,19 +3,25 @@ import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, B
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
-import { Close, CloseRounded } from '@mui/icons-material';
 import { useTheme } from 'styled-components';
+import ThemeToggle from '../ThemeToggle/themeToggle';
 
-const Navbar = () => {
+const Navbar = ({ toggleTheme, darkMode }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme()
   return (
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>
-          <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+          <a style={{
+            display: "flex",
+            alignItems: "center",
+            color: darkMode ? "white" : "black", // Set the text color based on the theme
+            marginBottom: '20',
+            cursor: 'pointer',
+            }}>
+          <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+        </a>
         </NavLogo>
         <MobileIcon>
           <FaBars onClick={() => {
@@ -32,6 +38,8 @@ const Navbar = () => {
         <ButtonContainer>
           <GitHubButton href={Bio.github} target="_blank">Github Profile</GitHubButton>
         </ButtonContainer>
+        <div style={{ margin: '10px' }} /> {/* Add spacing between GitHub button and ThemeToggle */}
+        <ThemeToggle darkMode={darkMode} toggleTheme={toggleTheme} />
         {
           isOpen &&
           <MobileMenu isOpen={isOpen}>

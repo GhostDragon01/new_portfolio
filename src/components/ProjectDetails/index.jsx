@@ -205,7 +205,19 @@ const index = ({ openModal, setOpenModal }) => {
                             <Tag>{tag}</Tag>
                         ))}
                     </Tags>
-                    <Desc>{project?.description}</Desc>
+                    <Desc>
+                        {project?.description.split('. ').map((sentence, index) => (
+                            index !== 0 ? (
+                                <p key={index}>
+                                    &bull; {sentence.trim()}
+                                </p>
+                            ) : (
+                                <p key={index}>
+                                    {sentence.trim()}
+                                </p>
+                            )
+                        ))}
+                    </Desc>
                     {project.member && (
                         <>
                             <Label>Members</Label>
@@ -227,7 +239,6 @@ const index = ({ openModal, setOpenModal }) => {
                     )}
                     <ButtonGroup>
                         <Button dull href={project?.github} target='new'>View Code</Button>
-                        <Button href={project?.webapp} target='new'>View Live App</Button>
                     </ButtonGroup>
                 </Wrapper>
             </Container>

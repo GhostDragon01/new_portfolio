@@ -16,7 +16,6 @@ const HeroSection = () => {
                     <HeroLeftContainer id="Left">
                         <Title>Hi, I am <br /> {Bio.name}</Title>
                         <TextLoop>
-                            I am a
                             <Span>
                                 <Typewriter
                                     options={{
@@ -28,7 +27,7 @@ const HeroSection = () => {
                             </Span>
                         </TextLoop>
                         <SubTitle>{Bio.description}</SubTitle>
-                        <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
+                        <ResumeButton href={Bio.resume} target='display'>Resume/CV</ResumeButton>
                     </HeroLeftContainer>
 
                     <HeroRightContainer id="Right">

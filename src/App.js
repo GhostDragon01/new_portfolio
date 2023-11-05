@@ -30,10 +30,13 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   console.log(openModal)
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={{ ...darkMode ? darkTheme : lightTheme, mode: darkMode ? 'dark' : 'light' }}>
       <Router >
-        <Navbar />
+        <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
         <Body>
           <HeroSection />
           <Wrapper>
@@ -43,7 +46,6 @@ function App() {
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
             <Education />
-            <Contact />
           </Wrapper>
           <Footer />
           {openModal.state &&
