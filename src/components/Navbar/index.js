@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileNavLogo, MobileLink } from './NavbarStyledComponent'
+import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent'
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
@@ -13,10 +13,10 @@ const Navbar = ({ toggleTheme, darkMode }) => {
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>
-          <a style={{
+          <a href='#top' style={{
             display: "flex",
             alignItems: "center",
-            color: darkMode ? "white" : "black", // Set the text color based on the theme
+            color: darkMode ? "white" : "black",
             marginBottom: '20',
             cursor: 'pointer',
             }}>
